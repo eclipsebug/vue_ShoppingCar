@@ -41,6 +41,9 @@ export default {
 
 <style>
 .app {
+  box-sizing: border-box;
   padding: 50px 0;
+  max-height: 100vh;
+  overflow: auto;
 }
 </style>
