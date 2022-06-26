@@ -1,7 +1,7 @@
 <template>
   <div class="app">
     <MyHeader title="购物车案例" color="yellow" background="skyblue" />
-    <MyGoods />
+    <MyGoods v-for="item in goodList" :key="item.goods_id" :goods="item" />
     <MyFooter />
   </div>
 </template>
@@ -13,6 +13,12 @@ import MyHeader from '#/MyHeader.vue'
 import MyGoods from '#/MyGoods.vue'
 import MyFooter from '#/MyFooter.vue'
 export default {
+  data() {
+    return {
+      goodList: []
+    }
+  },
+
   components: {
     MyHeader,
     MyGoods,
@@ -26,7 +32,8 @@ export default {
       const res = await axios({
         url: '/api/cart'
       })
-      console.log(res)
+      // console.log(res)
+      this.goodList = res.data.list
     }
   }
 }
