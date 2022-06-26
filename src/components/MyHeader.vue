@@ -1,9 +1,25 @@
 <template>
-  <div class="my-header">购物车案例</div>
+  <div class="my-header" :style="{ color, background }">{{ title }}</div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    title: {
+      type: String,
+      require: true
+    },
+    color: {
+      type: String,
+      require: true
+    },
+    background: {
+      type: String,
+      require: true,
+      default: 'red'
+    }
+  }
+}
 </script>
 
 <style lang="less" scoped>

@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <MyHeader />
+  <div class="app">
+    <MyHeader title="购物车案例" color="yellow" background="skyblue" />
     <MyGoods />
     <MyFooter />
   </div>
@@ -32,4 +32,8 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.app {
+  padding: 50px 0;
+}
+</style>
